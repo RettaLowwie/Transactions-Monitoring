@@ -42,7 +42,7 @@ if uploaded_file is not None:
     mean_transaction = np.mean(df['Total'])
     median_transaction = np.median(df['Total'])
     max_transaction = np.max(df['Total'])
-   # total_unique_customers = df['Customer_Name'].nunique()
+    # total_unique_customers = df['Customer_Name'].nunique()
 
     chargeonlytransactions = df[df['Type'] == 'Charge']
     refundonlytransactions = df[df['Type'] == 'Refund']
