@@ -30,7 +30,7 @@ if uploaded_file is not None:
     dfpreclean2 = dfpreclean[dfpreclean['Success'] == 1]
     dfpreclean2["Transaction_Notes"].fillna("N/A", inplace = True)
 
-    df = dfpreclean2.loc[:,['Total', 'Transaction_Type', 'Type', 'Country', 'Source','Day', 'Customer_Name', 'Transaction_Notes']]
+    df = dfpreclean2.loc[:,['Total', 'Transaction_Type', 'Type', 'Country', 'Source', 'Day', 'Customer_Name', 'Transaction_Notes']]
     dfpreclean2.loc[:, "Transaction_Notes"] = dfpreclean2["Transaction_Notes"].fillna("N/A")
     dfpreclean2.loc[:, 'Day'] = pd.to_datetime(dfpreclean2['Day'], errors='coerce')
 
@@ -77,7 +77,6 @@ if uploaded_file is not None:
     total_unique_customers = pivottablenames['sum_of_total'].count()
 
     avg_transactions_count_per_customer = np.mean(pivottablenames['count_of_total'])
-
     avg_transactions_sum_per_customer = np.mean(pivottablenames['sum_of_total'])
 
     pivottabltransactiontype = pd.pivot_table(df, index=['Transaction_Type'], aggfunc={'Transaction_Type': 'count', 'Total': 'sum'})
@@ -94,7 +93,6 @@ if uploaded_file is not None:
     payment_note_final = payment_note[payment_note['Transaction_Notes'].str.contains(flagged_words, case=False)]
 
     highticket = df[df['Total'] >= highticketval].copy()
-    
     highticket = highticket.sort_values(by='Total', ascending=False)
 
     dup = df.copy()
