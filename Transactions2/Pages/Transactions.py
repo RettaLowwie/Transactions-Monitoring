@@ -8,6 +8,9 @@ import io
 
 # st.set_page_config(page_title="Transactions", page_icon="🛒")
 
+def main():
+    st.write("This is the Transactions page!")
+
 st.title("Transaction Breakdown")
 
 filename = st.text_input("Filename", key="filename")
