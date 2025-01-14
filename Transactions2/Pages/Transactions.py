@@ -14,11 +14,8 @@ def main():
 st.title("Transaction Breakdown")
 
 filename = st.text_input("Filename", key="filename")
-
 firstname = st.text_input("Enter Name", key="firstname1")
-
 highticketstring = st.number_input("Enter High Ticket INTEGER ONLY", key="highticket")
-
 uploaded_file = st.file_uploader("Please Upload CSV File", type=['csv'])
 
 if uploaded_file is not None:
