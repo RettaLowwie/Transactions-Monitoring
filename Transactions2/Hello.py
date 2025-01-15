@@ -24,12 +24,20 @@ choice = st.sidebar.radio(
     index=0
 )
 
+# if choice == "🛒 Transactions":
+#     # Import the Transactions page
+#     import Transactions2.Pages.Transactions  # Update the file name if renamed
+# elif choice == "📊 Graphs":
+#     # Import the Graphs page
+#     import Transactions2.Pages.Graphs  # Ensure the file exists
 if choice == "🛒 Transactions":
-    # Import the Transactions page
-    import Transactions2.Pages.Transactions  # Update the file name if renamed
+    # Import and display the Transactions page
+    from Transactions2.Pages import Transactions
+    Transactions.main()  # Ensure `Transactions.py` has a `main()` function
 elif choice == "📊 Graphs":
-    # Import the Graphs page
-    import Transactions2.Pages.Graphs  # Ensure the file exists
+    # Import and display the Graphs page
+    from Transactions2.Pages import Graphs
+    Graphs.main()  # Ensure `Graphs.py` has a `main()` function
 elif choice == "Home":
     st.write("# Welcome to Paypal Reviews")
     st.markdown(
