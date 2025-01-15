@@ -58,7 +58,7 @@ def main():
 # days180 = pd.Timestamp(date.today() - timedelta(days=180))
 
         chargetotal = np.sum(chargeonlytransactions['Total'])
-        charge90days = np.sum(chargeonlytransactions['Day'] > days90]*['Total'])
+        charge90days = np.sum((chargeonlytransactions['Day'] > days90) *['Total'])
         charge180days = np.sum(chargeonlytransactions[chargeonlytransactions['Day'] > days180]*['Total'])
         # charge90days = np.sum(chargeonlytransactions[chargeonlytransactions['Day'] > days90]['Total'])
         # charge180days = np.sum(chargeonlytransactions[chargeonlytransactions['Day'] > days180]['Total'])
