@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import io
-#import xlsxwriter
+import xlsxwriter
 
 # st.set_page_config(page_title="Transactions", page_icon="🛒")
 
