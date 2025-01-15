@@ -188,3 +188,6 @@ def main():
 
     else:
         st.warning("you need to upload a csv file.")
+        #Call the main function to run the transaction page logic
+    if __name__ == '__main__':
+    main()
