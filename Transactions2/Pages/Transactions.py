@@ -33,7 +33,8 @@ def main():
 
         df = dfpreclean2.loc[:,['Total', 'Transaction_Type', 'Type', 'Country', 'Source','Day', 'Customer_Name', 'Transaction_Notes']]
         dfpreclean2.loc[:, "Transaction_Notes"] = dfpreclean2["Transaction_Notes"].fillna("N/A")
-        dfpreclean2.loc[:, 'Day'] = pd.to_datetime(dfpreclean2['Day'], errors='coerce')
+        # dfpreclean2.loc[:, 'Day'] = pd.to_datetime(dfpreclean2['Day'], errors='coerce')
+        dfpreclean2['Day'] = pd.to_datetime(dfpreclean2['Day'], errors='coerce')
 
 
         #Basic Calculations  
@@ -51,6 +52,10 @@ def main():
 
         days90 = pd.to_datetime(date.today() - timedelta(days=90))
         days180 = pd.to_datetime(date.today() - timedelta(days=180))
+
+        # Convert days90 and days180 to pandas Timestamps
+# days90 = pd.Timestamp(date.today() - timedelta(days=90))
+# days180 = pd.Timestamp(date.today() - timedelta(days=180))
 
         chargetotal = np.sum(chargeonlytransactions['Total'])
         charge90days = np.sum(chargeonlytransactions[chargeonlytransactions['Day'] > days90]['Total'])
